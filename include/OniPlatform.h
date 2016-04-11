@@ -18,8 +18,8 @@
 *  limitations under the License.                                            *
 *                                                                            *
 *****************************************************************************/
-#ifndef _ONI_PLATFORM_H_
-#define _ONI_PLATFORM_H_
+#ifndef ONIPLATFORM_H
+#define ONIPLATFORM_H
 
 // Supported platforms
 #define ONI_PLATFORM_WIN32 1
@@ -37,7 +37,7 @@
 #	include "Win32/OniPlatformWin32.h"
 #elif defined (ANDROID) && defined (__arm__)
 #	include "Android-Arm/OniPlatformAndroid-Arm.h"
-#elif (linux && (i386 || __x86_64__))
+#elif (__linux__ && (i386 || __x86_64__))
 #	include "Linux-x86/OniPlatformLinux-x86.h"
 #elif (__linux__ && __arm__)
 #	include "Linux-Arm/OniPlatformLinux-Arm.h"
@@ -48,7 +48,6 @@
 #else
 #	error Xiron Platform Abstraction Layer - Unsupported Platform!
 #endif
-
 
 #ifdef __cplusplus
 #	define ONI_C extern "C"
@@ -70,4 +69,4 @@
 #endif // OPENNI2_EXPORT
 
 
-#endif // _ONI_PLATFORM_H_
+#endif // ONIPLATFORM_H
